@@ -1,19 +1,18 @@
-# Zero-Copy Camera Inference
+# Inference-Energy Camera Gate
 
-Zero-Copy Camera Inference is an ESP32-S3 / ESP-IDF project for reducing edge-AI
+This is an ESP32-S3 / ESP-IDF project for reducing edge-AI
 energy use by avoiding unnecessary vision-model invocations.
 
 It is centered on a small frame-difference gate that reads the live camera
 framebuffer in place, reduces the image to a 16 x 12 grayscale grid, and decides
 whether the person-detection model needs to run for the current frame.
 
-The project is not trying to make a larger model or a more complex detector. It
-shows a practical embedded pattern: keep the expensive AI path idle when the
+The project shows a practical embedded pattern: keep the expensive AI path idle when the
 scene is stable, then spend the model only when new information arrives.
 
 ## What it provides
 
-- **Zero-copy camera gate** over the `esp-camera` framebuffer
+- **Camera gate** over the `esp-camera` framebuffer
 - **Small reference representation** using a 192-byte grayscale grid
 - **Hysteresis-based scene-change detection** to avoid noisy gate chatter
 - **Adaptive reference refresh** for slow lighting drift and settled scene changes
