@@ -1,0 +1,30 @@
+.pio/
+build/
+managed_components/
+sdkconfig.old
+sdkconfig.seeed_xiao_esp32s3*
+*.elf
+*.bin
+*.map
+*.lst
+*.tmp
+*.swp
+__pycache__/
+.DS_Store
+
+# Local proof and operator artifacts.
+proof-*.log
+artifacts/
+tools/
+
+# Local project-management state, not public repo content.
+project-state.md
+backlog.md
+task-ledger.json
+implementation-plan.md
+project_guidelines.md
+calibration-and-demo-runbook.md
+hardware-approval-packet.md
+comparison-proof-note-2026-08-25.md
+reference-frame-encoding.md
+PUBLICATION_MANIFEST.md

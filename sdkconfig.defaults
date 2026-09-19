@@ -1,0 +1,26 @@
+# PlatformIO / ESP-IDF defaults for the XIAO ESP32-S3 zero-copy camera demo.
+
+CONFIG_ESPTOOLPY_FLASHSIZE_8MB=y
+CONFIG_ESPTOOLPY_FLASHSIZE="8MB"
+
+CONFIG_ESP32S3_DEFAULT_CPU_FREQ_240=y
+
+# XIAO ESP32-S3 Sense exposes 8 MB octal PSRAM. The camera framebuffer and the
+# TFLite tensor arena both depend on MALLOC_CAP_SPIRAM allocations.
+CONFIG_SPIRAM=y
+CONFIG_SPIRAM_MODE_OCT=y
+CONFIG_SPIRAM_SPEED_80M=y
+CONFIG_SPIRAM_BOOT_INIT=y
+CONFIG_SPIRAM_USE_MALLOC=y
+CONFIG_SPIRAM_MEMTEST=y
+
+# Keep the primary console on UART0 and mirror it to the XIAO ESP32-S3
+# USB-Serial/JTAG console. This keeps ESP-IDF boot telemetry available after
+# reset while preserving the primary UART console.
+CONFIG_ESP_CONSOLE_UART_DEFAULT=y
+# CONFIG_ESP_CONSOLE_USB_CDC is not set
+# CONFIG_ESP_CONSOLE_USB_SERIAL_JTAG is not set
+# CONFIG_ESP_CONSOLE_UART_CUSTOM is not set
+# CONFIG_ESP_CONSOLE_NONE is not set
+# CONFIG_ESP_CONSOLE_SECONDARY_NONE is not set
+CONFIG_ESP_CONSOLE_SECONDARY_USB_SERIAL_JTAG=y

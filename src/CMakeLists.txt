@@ -1,0 +1,15 @@
+idf_component_register(
+    SRCS
+        "energy_estimator.cpp"
+        "gate.cpp"
+        "main.cpp"
+        "person_detect_model_data.cpp"
+    INCLUDE_DIRS
+        "."
+    REQUIRES
+        esp-tflite-micro
+        esp32-camera
+        esp_timer
+        heap
+        driver
+)
